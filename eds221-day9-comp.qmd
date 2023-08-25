@@ -1,0 +1,31 @@
+---
+title: "eds221-day9-comp"
+format: html
+editor: visual
+---
+
+```{library(patchwork)}
+library(tidyverse)
+library(palmerpenguins)
+library(kableExtra)
+```
+
+## Warm-Up:
+
+Starting from penguins create a new subset where you
+
+only keep columns species, island, sex, body_mass_g, and flipper_length_mm
+
+filter to only include Chinstrap and Gentoos
+
+rename the species column to penguin_species
+
+create a summary table that contains the mean body mass, mean flipper length, and total count of obs each by species and sex
+
+```{penguins %>%}
+select("species", "island", "sex", "body_mass_g", "flipper_length_mm") %>% 
+filter(species == "Chinstrap" | species == "Gentoos") %>% 
+mutate(species = "penguin_species") %>% 
+group_by(penguin_species, sex) %>% 
+summarise(mean_body_mass = mean(body_mass_g), mean_flipper = mean(flipper_length_mm))
+```

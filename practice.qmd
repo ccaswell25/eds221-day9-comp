@@ -1,0 +1,34 @@
+---
+title: "practice"
+format: html
+editor: visual
+---
+
+## Practice
+
+Write a for loop, where, starting with the vector: c(2,4,6,8,10,12) you add a value and the one that immediately precedes it, returning a new vector with those sums
+
+```{r}
+vector1 <- c(2,4,6,8,10,12)
+
+my_vec <- vector(mode = "numeric", length = (length(vector1) - 1))
+
+for (i in 2:length(vector1)) {
+  my_vec[i-1] <-(vector1[i] + vector1[i - 1])
+}
+```
+
+```{r}
+view(trees)
+ggplot(data=trees, aes(x = Height, y = Volume)) + 
+  geom_point() +
+  theme(title = element_text(size = 18, color = "purple"), 
+        plot.background = element_rect(fill = "black"),
+        panel.background = element_rect(fill = "orange"), 
+        axis.title.x = element_text(color = "green"),
+        panel.grid = element_line(color = "pink"),
+        panel.grid.minor = element_line(color = "yellow"))
+  
+
+#We're adding color to our axes and changing the background color of our chart to black.We're changing the fill of the graph chart with panel background. We're updating the axis lines and gridlines in our chart. 
+```
